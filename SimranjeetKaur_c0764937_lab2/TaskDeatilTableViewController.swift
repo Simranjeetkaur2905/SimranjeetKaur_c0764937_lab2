@@ -129,6 +129,7 @@ class TaskDeatilTableViewController: UITableViewController,UISearchBarDelegate {
                  let data = try ManagedContext.fetch(fetchRequest)
                  let taskitem = data[indexPath.row] as? NSManagedObject
                  self.taskArray?.remove(at: indexPath.row)
+                 self.tasks?.remove(at: indexPath.row)
               ManagedContext.delete(taskitem!)
                  tableView.reloadData()
                  do{
